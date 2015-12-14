@@ -23,6 +23,6 @@ public class ZipMavenPlugin extends AbstractMojo {
 		String target = project.getBuild().getDirectory();
 		File[] files = new File(target).listFiles((dir, name) -> name.startsWith(finalName));
 
-		Stream.of(files).forEach((file) -> ZipUtil.packEntry(file, new File(target + "/" + finalName + ".zip")));
+		Stream.of(files).forEach((file) -> ZipUtil.packEntry(file, new File(target + File.separator + finalName + ".zip")));
 	}
 }
